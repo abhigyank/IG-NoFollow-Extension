@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <style>
+        .features {
+            padding-top: 3em;
+            padding: .5em;
+            /* margin: 0 auto; */
+            display: grid;
+            gap: 0;
+            grid-template-columns: auto 1fr;
+            width: 32%;
+            float: left;
+        }
+
+        .features article {
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            row-gap: 5px;
+        }
+
+        .features .content {
+            background-color: rgba(255, 255, 255, .9);
+            padding-left: 20px;
+            color: #222;
+            border-left: 2px solid #D83B01;
+        }
+
+        .features .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features .content ul li {
+            margin-bottom: 0.3em;
+            padding-bottom: 0.3em;
+            border-bottom: 1px dotted #D83B01;
+            font-size: 15px;
+        }
+
+        .features header {
+            background-color: #D83B01;
+            color: #fff;
+            padding: 1.3em;
+        }
+
+        a {
+            color: inherit;
+            /* blue colors for links too */
+            text-decoration: inherit;
+            /* no underline */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="features">
+        <article>
+            <header>
+                <h2>People who dont follow back</h2>
+            </header>
+        </article>
+        <article>
+            <div class="content">
+                <ul id="nonFollowBack">
+                </ul>
+            </div>
+        </article>
+    </div>
+    <div class="features">
+        <article>
+            <header>
+                <h2>People following you</h2>
+            </header>
+        </article>
+        <article>
+            <div class="content">
+                <ul id="followers">
+                </ul>
+            </div>
+        </article>
+    </div>
+    <div class="features">
+        <article>
+            <header>
+                <h2>People you follow</h2>
+            </header>
+        </article>
+        <article>
+            <div class="content">
+                <ul id="following">
+                </ul>
+            </div>
+        </article>
+    </div>
+
+
+</body>
+<script src="display.js"></script>
+
+</html>
