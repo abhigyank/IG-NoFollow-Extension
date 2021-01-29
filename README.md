@@ -6,6 +6,8 @@
 
 *Instagram No-Follow Back is a web browser extension that shows the list of accounts that don't follow back an Instagram account*
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ### Installation Instructions
 **Google Chrome / Microsoft Edge** 
 
