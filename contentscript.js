@@ -2,12 +2,22 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// tentative number of accounts instagram loads on each scroll
+const instagramLoadCount = 12;
+
+selectors = {
+    modalTrigger: "main section ul li a",
+    userLi: "[role=dialog] ul div",
+    ulElement: "[role=dialog] ul",
+    usernames: "[role=dialog] ul li span a",
+    modalDiv: "[role=dialog] ul li div"
+}
 
 var port = chrome.runtime.connect({ name: "InstagramExtensionData" });
 
-const followersElement = document.querySelectorAll("main section ul li a")[0];
+const followersElement = document.querySelectorAll(selectors.modalTrigger)[0];
 const followersCount = Number(followersElement.children[0].innerText.split(",").join(""));
-const followingElement = document.querySelectorAll("main section ul li a")[1];
+const followingElement = document.querySelectorAll(selectors.modalTrigger)[1];
 const followingCount = Number(followingElement.children[0].innerText.split(",").join(""));
 
 var followers = [];
@@ -22,9 +32,9 @@ const checkElement = async selector => {
 }
 
 async function scrollElement(elem, maxCount) {
-    const listElement = document.querySelector("[role=dialog] ul div");
+    const listElement = document.querySelector(selectors.userLi);
     let listLoadedCount = listElement.childElementCount;
-    let limit = (maxCount - (maxCount % 12));
+    let limit = (maxCount - (maxCount % instagramLoadCount));
     if ((maxCount % 12)) limit++;
     while (listLoadedCount < limit) {
         elem.scrollTop = elem.scrollHeight;
@@ -38,36 +48,34 @@ async function scrollElement(elem, maxCount) {
     }
 }
 async function execute() {
-
     // Getting Followers Data
     followersElement.click();
     let listLoadedCount = 0;
-    await checkElement("[role=dialog] ul li div");
+    await checkElement(selectors.modalDiv);
 
-    let ulElement = document.querySelector("[role=dialog] ul");
+    let ulElement = document.querySelector(selectors.ulElement);
     let divElement = ulElement.parentElement;
 
     await scrollElement(divElement, followersCount);
 
-    const followerElements = document.querySelectorAll("[role=dialog] ul li span a");
+    const followerElements = document.querySelectorAll(selectors.usernames);
     followerElements.forEach(element => {
         followers.push(element.innerHTML);
     });
     console.log(followers);
 
     // Getting Following Data
-
     followingElement.click();
     listLoadedCount = 0;
 
-    await checkElement("[role=dialog] ul li div");
+    await checkElement(selectors.modalDiv);
 
-    ulElement = document.querySelector("[role=dialog] ul");
+    ulElement = document.querySelector(selectors.ulElement);
     divElement = ulElement.parentElement;
 
     await scrollElement(divElement, followingCount);
 
-    const followingElements = document.querySelectorAll("[role=dialog] ul li span a");
+    const followingElements = document.querySelectorAll(selectors.usernames);
     followingElements.forEach(element => {
         following.push(element.innerHTML);
     });
