@@ -1,6 +1,6 @@
 {
     "name": "Instagram No-Follow Back",
-    "version": "0.0.0.1",
+    "version": "0.0.0.2",
     "description": "Get follow/unfollow data from Instagram.",
     "permissions": [
         "activeTab",
@@ -20,5 +20,5 @@
         "128": "icons/128x128.png"
     },
     "manifest_version": 2,
-    "update_url": "https://raw.githubusercontent.com/abhigyank/IG-NoFollow-Extension/master/src/updates/updates.xml"
+    "update_url": "https://raw.githubusercontent.com/abhigyank/IG-NoFollow-Extension/master/updates/updates.xml"
 }
