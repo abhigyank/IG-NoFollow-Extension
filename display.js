@@ -1,41 +1,42 @@
 function getListElement(text) {
-    let li = document.createElement('li');
-    let a = document.createElement('a');
-    a.href = "https://instagram.com/" + text;
-    a.setAttribute("target", "_blank");
-    let strong = document.createElement('strong');
-    strong.textContent = text;
-    a.appendChild(strong);
-    li.appendChild(a);
-    return li;
+	const li = document.createElement('li');
+	const a = document.createElement('a');
+	a.href = 'https://instagram.com/' + text;
+	a.setAttribute('target', '_blank');
+	const strong = document.createElement('strong');
+	strong.textContent = text;
+	a.append(strong);
+	li.append(a);
+	return li;
 }
 
-let data = JSON.parse(localStorage.sharedData);
+const data = JSON.parse(localStorage.sharedData);
 
-let followers = data.followers;
-let following = data.following;
+const {followers} = data;
+const {following} = data;
 
-let nonFollowBack = [];
+const nonFollowBack = [];
 
 for (let index = 0; index < following.length; index++) {
-    if (!followers.includes(following[index])) {
-        nonFollowBack.push(following[index]);
-    }
+	if (!followers.includes(following[index])) {
+		nonFollowBack.push(following[index]);
+	}
 }
-const list = document.querySelector("#nonFollowBack");
+
+const list = document.querySelector('#nonFollowBack');
 
 nonFollowBack.forEach(element => {
-    list.appendChild(getListElement(element));
+	list.append(getListElement(element));
 });
 
-const followersList = document.querySelector("#followers");
+const followersList = document.querySelector('#followers');
 
 followers.forEach(element => {
-    followersList.appendChild(getListElement(element));
+	followersList.append(getListElement(element));
 });
 
-const followingList = document.querySelector("#following");
+const followingList = document.querySelector('#following');
 
 following.forEach(element => {
-    followingList.appendChild(getListElement(element));
+	followingList.append(getListElement(element));
 });
