@@ -17,11 +17,18 @@
 1. Enable Developer Mode.
 1. Drag the `IG-NoFollow-Extension-master` folder anywhere on the page to import it (do not delete the folder afterwards).
 
+##### Install with auto-update support (Recommended)
+
+1. Download the `IG-NoFollow-Extension.crx` file from the [latest release on GitHub](https://github.com/abhigyank/IG-NoFollow-Extension/releases).
+1. In Chrome/Edge go to the extensions page (`chrome://extensions` or `edge://extensions`).
+1. Enable Developer Mode.
+1. Drag the `IG-NoFollow-Extension.crx` file anywhere on the page to install it.
+
 ### How to use
-1. Go to your instagram profile page (Ex. https://www.instagram.com/yourusername )
-1. Refresh the page
-1. Once the page is loaded, click the extension and wait for information to retreived (stay on the Instagram tab)
-1. When all the information is retrieved, the follow data is displayed to you in a new tab  
+1. Go to your instagram profile page (Ex. https://www.instagram.com/yourusername).
+1. Refresh the page.
+1. Once the page is loaded, click the extension and wait for information to retreived (stay on the Instagram tab).
+1. When all the information is retrieved, the follow data is displayed to you in a new tab.
 
 ### Disclaimer
 * This software is provided for educational purposes only and
