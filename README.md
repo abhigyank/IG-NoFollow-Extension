@@ -15,14 +15,11 @@
 1. Enable Developer Mode.
 1. Drag the `IG-NoFollow-Extension-master` folder anywhere on the page to import it (do not delete the folder afterwards).
 
-
-
 ### How to use
 1. Go to your instagram profile page (Ex. https://www.instagram.com/yourusername )
 1. Refresh the page
-1. Once the page is loaded, click the extension and wait for information to retreived
+1. Once the page is loaded, click the extension and wait for information to retreived (stay on the Instagram tab)
 1. When all the information is retrieved, the follow data is displayed to you in a new tab  
-
 
 ### Disclaimer
 * This software is provided for educational purposes only and
